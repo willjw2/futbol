@@ -123,14 +123,6 @@ class StatTracker < StatHelper
     shots_to_goals
   end
 
-  def games_by_season
-    @games_by_season_hash = Hash.new([])
-    @games.each do |game|
-      @games_by_season_hash[game[:season]] += [game[:game_id]]
-    end
-    @games_by_season_hash
-  end
-
   def tackles_by_team(season)
     games_by_season
     games_in_select_season = @games_by_season_hash[season]
