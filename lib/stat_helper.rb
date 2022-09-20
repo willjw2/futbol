@@ -12,9 +12,7 @@ class StatHelper
   # 4. games_by_team_by_season (best_season, worst_season)
   def games_by_season
     @games_by_season_hash = Hash.new([])
-    @games.each do |game|
-      @games_by_season_hash[game[:season]] += [game[:game_id]]
-    end
+    @games.each { |game| @games_by_season_hash[game[:season]] += [game[:game_id]] }
     @games_by_season_hash
   end
 
