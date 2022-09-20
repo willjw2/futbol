@@ -70,9 +70,7 @@ class StatTracker < StatHelper
 
   def average_scores_for_all_home_teams
     @home_hash = {}
-    home_games_by_team_id.each do |team_id, games_array|
-      @home_hash[team_id] = average_score_per_game(games_array)
-    end
+    home_games_by_team_id.each {|team_id, games_array| @home_hash[team_id] = average_score_per_game(games_array)}
     @home_hash
   end
 #-----------------------------------Season Statistics-----------------------------------
