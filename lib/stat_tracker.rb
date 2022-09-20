@@ -51,34 +51,26 @@ class StatTracker < StatHelper
   def away_games_by_team_id
     away_games_list = @game_teams.find_all {|game| game[:hoa] == "away"}
     away_games_hash = Hash.new([])
-    away_games_list.each do |game|
-      away_games_hash[game[:team_id].to_i] += [game]
-    end
+    away_games_list.each {|game| away_games_hash[game[:team_id].to_i] += [game]}
     away_games_hash
   end
 
   def home_games_by_team_id
     home_games_list = @game_teams.find_all {|game| game[:hoa] == "home"}
     home_games_hash = Hash.new([])
-    home_games_list.each do |game|
-      home_games_hash[game[:team_id].to_i] += [game]
-    end
+    home_games_list.each {|game| home_games_hash[game[:team_id].to_i] += [game]}
     home_games_hash
   end
 
   def average_scores_for_all_visitors
     @visitor_hash = {}
-    away_games_by_team_id.each do |team_id, games_array|
-      @visitor_hash[team_id] = average_score_per_game(games_array)
-    end
+    away_games_by_team_id.each {|team_id, games_array| @visitor_hash[team_id] = average_score_per_game(games_array)}
     @visitor_hash
   end
 
   def average_scores_for_all_home_teams
     @home_hash = {}
-    home_games_by_team_id.each do |team_id, games_array|
-      @home_hash[team_id] = average_score_per_game(games_array)
-    end
+    home_games_by_team_id.each {|team_id, games_array| @home_hash[team_id] = average_score_per_game(games_array)}
     @home_hash
   end
 #-----------------------------------Season Statistics-----------------------------------
@@ -123,14 +115,6 @@ class StatTracker < StatHelper
     shots_to_goals
   end
 
-  def games_by_season
-    @games_by_season_hash = Hash.new([])
-    @games.each do |game|
-      @games_by_season_hash[game[:season]] += [game[:game_id]]
-    end
-    @games_by_season_hash
-  end
-
   def tackles_by_team(season)
     games_by_season
     games_in_select_season = @games_by_season_hash[season]
@@ -154,9 +138,7 @@ class StatTracker < StatHelper
 
   def games_by_team
     @games_by_team_hash = Hash.new([])
-    @game_teams.each do |game|
-      @games_by_team_hash[game[:team_id]] += [game]
-    end
+    @game_teams.each {|game| @games_by_team_hash[game[:team_id]] += [game]}
     @games_by_team_hash
   end
 
