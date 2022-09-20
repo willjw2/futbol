@@ -64,9 +64,7 @@ class StatTracker < StatHelper
 
   def average_scores_for_all_visitors
     @visitor_hash = {}
-    away_games_by_team_id.each do |team_id, games_array|
-      @visitor_hash[team_id] = average_score_per_game(games_array)
-    end
+    away_games_by_team_id.each {|team_id, games_array| @visitor_hash[team_id] = average_score_per_game(games_array)}
     @visitor_hash
   end
 
