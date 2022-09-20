@@ -32,6 +32,7 @@ class StatHelper
     goals / games
   end
 
+  # Helper method is used in percentage_home_wins, percentage_visitor_wins, and percentage_ties
   def total_games
     @games.size
   end
