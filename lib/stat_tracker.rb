@@ -51,9 +51,7 @@ class StatTracker < StatHelper
   def away_games_by_team_id
     away_games_list = @game_teams.find_all {|game| game[:hoa] == "away"}
     away_games_hash = Hash.new([])
-    away_games_list.each do |game|
-      away_games_hash[game[:team_id].to_i] += [game]
-    end
+    away_games_list.each {|game| away_games_hash[game[:team_id].to_i] += [game]}
     away_games_hash
   end
 
