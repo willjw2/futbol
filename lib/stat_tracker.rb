@@ -146,9 +146,7 @@ class StatTracker < StatHelper
 
   def games_by_team
     @games_by_team_hash = Hash.new([])
-    @game_teams.each do |game|
-      @games_by_team_hash[game[:team_id]] += [game]
-    end
+    @game_teams.each {|game| @games_by_team_hash[game[:team_id]] += [game]}
     @games_by_team_hash
   end
 
