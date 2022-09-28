@@ -31,7 +31,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/josephhilby/futbol">
-    <img src="images/Battleship_game_board.svg" alt="Logo" width="100" height="100">
+    <img src="images/futbol.jpeg" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">Futbol</h3>
@@ -72,8 +72,7 @@ This was a team project given while at the Turing School of Software Design. The
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Clone this repo. Navigate to the root directory, then run ```ruby battleship_runner.rb```
-
+Clone this repo. Navigate to the root directory, then run ```ruby runner.rb```. This will bring up a pry session where you can call stat_tracker.[method_name](https://backend.turing.edu/module1/projects/futbol/iterations/statistics).
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -93,7 +92,7 @@ William Wang - [https://github.com/willjw2](https://github.com/willjw2)
 
 Gabe Nunez - [https://github.com/MisterJackpots](https://github.com/MisterJackpots)
 
-Project Link: [https://github.com/josephhilby/futbol)
+Project Link: [https://github.com/josephhilby/futbol](https://github.com/josephhilby/futbol)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
